@@ -278,5 +278,7 @@ Vtiger::Api.api_settings = {
 
 == Testing via Curl
 Testing via curl
-curl  http://yoururl/modules/Mobile/api.php -X POST -d "_operation=login&username=admin&password=xyz"
+
+
+curl  http://crm.yoururl.com/modules/Mobile/api.php -X POST -d "_operation=login&username=admin&password=xyz"
 
