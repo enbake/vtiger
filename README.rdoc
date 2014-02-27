@@ -251,3 +251,32 @@ List types
   }
 }
 -------------finished processing!!!
+
+== vTiger Mobile Apis
+
+There are a set of base commands using username and password  (eg http post, login etc)
+And commands which are more specific to the actual usage such as addlead, retrieve_object
+
+Options can be passed as hash  or preset using a Class variable
+
+Vtiger::Api.api_settings = {
+    :username => 'admin',
+    :password => 'xyz',
+    :url => 'democrm.estormtech.com'
+  }
+
+== SYNOPSIS:
+
+    Vtiger::Api.api_settings = {
+      :username => 'admin',
+      :password => 'xyz',
+      :url => 'democrm.estormtech.com',
+    }
+   cmd = Vtiger::Mobile.new()
+   login=cmd.login #returns true if login
+   cmd.addlead  etc...
+
+== Testing via Curl
+Testing via curl
+curl  http://yoururl/modules/Mobile/api.php -X POST -d "_operation=login&username=admin&password=xyz"
+
