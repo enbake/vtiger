@@ -34,6 +34,14 @@ module Vtiger
       return success, id
     end
 
+    def fetch_contacts
+      puts "in fetching contacts"
+      input_array = {'_operation' => 'listModuleRecords', 'module' => "Contacts", '_session' => "#{self.session_name}"} # removed the true
+      result = http_crm_post("_operation=listModuleRecords", input_array)
+      values = result["result"]
+      values
+    end
+
     def retrieve_object(objid)
       puts "in retrieve object"
       input_array = {'_operation' => 'fetchRecord', '_session' => "#{self.session_name}", 'record' => "#{objid}"}
